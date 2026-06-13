@@ -1276,3 +1276,765 @@ Constraints
 
 * Use abstraction.
 * Use polymorphism.
+## Question 31 — Printer Service
+
+Create:
+
+```java
+Printer
+```
+
+Method
+
+```java
+print(String document)
+```
+
+Create:
+
+```java
+OfficeWorker
+```
+
+Field
+
+```java
+private Printer printer;
+```
+
+Method
+
+```java
+printDocument(String document)
+```
+
+Constraints
+
+* Use dependency injection.
+* OfficeWorker must depend on Printer.
+
+---
+
+## Question 32 — Immutable Address
+
+Create:
+
+```java
+Address
+```
+
+Fields
+
+```java
+private final String street;
+private final String city;
+private final String country;
+```
+
+Methods
+
+```java
+getStreet()
+getCity()
+getCountry()
+```
+
+Constraints
+
+* Immutable object.
+* No setters.
+* Fields must be final.
+
+---
+
+## Question 33 — Notification Factory
+
+Create interface:
+
+```java
+Notification
+```
+
+Method
+
+```java
+send()
+```
+
+Implement:
+
+```java
+EmailNotification
+SmsNotification
+```
+
+Create:
+
+```java
+NotificationFactory
+```
+
+Method
+
+```java
+createNotification(String type)
+```
+
+Rules
+
+```text
+email -> EmailNotification
+sms -> SmsNotification
+```
+
+Constraints
+
+* Apply the Factory Pattern.
+
+---
+
+## Question 34 — Smart TV
+
+Create:
+
+```java
+Television
+```
+
+Fields
+
+```java
+private boolean poweredOn;
+private int volume;
+```
+
+Methods
+
+```java
+powerOn()
+powerOff()
+increaseVolume()
+getVolume()
+```
+
+Rules
+
+* Volume starts at 10.
+* Volume cannot exceed 100.
+
+---
+
+## Question 35 — Hospital Ward
+
+Create:
+
+```java
+Patient
+Ward
+```
+
+Ward fields
+
+```java
+private List<Patient> patients;
+```
+
+Methods
+
+```java
+admitPatient()
+patientCount()
+```
+
+Constraints
+
+* Use aggregation.
+* Patients may exist independently.
+
+---
+
+## Question 36 — Media Player
+
+Create abstract class:
+
+```java
+MediaFile
+```
+
+Method
+
+```java
+play()
+```
+
+Create:
+
+```java
+Mp3File
+VideoFile
+```
+
+Outputs
+
+```text
+Playing MP3
+Playing Video
+```
+
+Constraints
+
+* Use abstraction.
+* Use polymorphism.
+
+---
+
+## Question 37 — Voting System
+
+Create:
+
+```java
+Candidate
+```
+
+Fields
+
+```java
+private String name;
+private int votes;
+```
+
+Methods
+
+```java
+vote()
+getVotes()
+```
+
+Rules
+
+* Each vote increments the count by one.
+
+---
+
+## Question 38 — Restaurant Menu
+
+Create interface:
+
+```java
+MenuItem
+```
+
+Method
+
+```java
+price()
+```
+
+Implement:
+
+```java
+Burger
+Pizza
+```
+
+Rules
+
+```text
+Burger -> 50
+Pizza -> 80
+```
+
+Constraints
+
+* Use interfaces.
+* Demonstrate polymorphism.
+
+---
+
+## Question 39 — University Course Leader
+
+Create:
+
+```java
+Lecturer
+Course
+```
+
+Fields
+
+```java
+private Lecturer lecturer;
+```
+
+Methods
+
+```java
+assignLecturer()
+getLecturer()
+```
+
+Constraints
+
+* Demonstrate association.
+
+---
+
+## Question 40 — Tax Calculator
+
+Create interface:
+
+```java
+TaxStrategy
+```
+
+Method
+
+```java
+calculateTax(double income)
+```
+
+Implement:
+
+```java
+IndividualTax
+CompanyTax
+```
+
+Rules
+
+```text
+Individual -> 18%
+Company -> 27%
+```
+
+Constraints
+
+* Apply the Strategy Pattern.
+## Question 41 — User Profile Builder
+
+Create:
+
+```java
+UserProfile
+```
+
+Fields
+
+```java
+private String firstName;
+private String lastName;
+private String email;
+```
+
+Create:
+
+```java
+UserProfileBuilder
+```
+
+Methods
+
+```java
+firstName(String firstName)
+lastName(String lastName)
+email(String email)
+build()
+```
+
+Example
+
+```java
+UserProfile profile =
+        new UserProfileBuilder()
+                .firstName("John")
+                .lastName("Smith")
+                .email("john@email.com")
+                .build();
+```
+
+Constraints
+
+* Apply the Builder Pattern.
+
+---
+
+## Question 42 — Drone
+
+Create:
+
+```java
+Drone
+```
+
+Fields
+
+```java
+private boolean flying;
+```
+
+Methods
+
+```java
+takeOff()
+land()
+isFlying()
+```
+
+Rules
+
+* A flying drone cannot take off again.
+* A landed drone cannot land again.
+
+Constraints
+
+* Manage state correctly.
+
+---
+
+## Question 43 — Sports Team
+
+Create:
+
+```java
+Coach
+Team
+```
+
+Team fields
+
+```java
+private Coach coach;
+```
+
+Methods
+
+```java
+assignCoach()
+getCoach()
+```
+
+Constraints
+
+* Demonstrate association.
+
+---
+
+## Question 44 — Payment Gateway
+
+Create interface:
+
+```java
+PaymentGateway
+```
+
+Method
+
+```java
+processPayment(double amount)
+```
+
+Implement:
+
+```java
+PayPalGateway
+StripeGateway
+```
+
+Outputs
+
+```text
+PayPal Payment Processed
+Stripe Payment Processed
+```
+
+Constraints
+
+* Use interfaces.
+* Demonstrate polymorphism.
+
+---
+
+## Question 45 — Warehouse Storage
+
+Create:
+
+```java
+Box
+Warehouse
+```
+
+Warehouse fields
+
+```java
+private List<Box> boxes;
+```
+
+Methods
+
+```java
+addBox()
+boxCount()
+```
+
+Constraints
+
+* Use composition.
+* Boxes belong entirely to a warehouse.
+
+---
+
+## Question 46 — Employee ID
+
+Create:
+
+```java
+EmployeeId
+```
+
+Fields
+
+```java
+private final String value;
+```
+
+Methods
+
+```java
+getValue()
+```
+
+Constraints
+
+* Immutable object.
+* No setters.
+* Value cannot change after construction.
+
+---
+
+## Question 47 — Message Service
+
+Create interface:
+
+```java
+MessageSender
+```
+
+Method
+
+```java
+sendMessage(String message)
+```
+
+Create:
+
+```java
+EmailSender
+SmsSender
+```
+
+Create:
+
+```java
+MessageService
+```
+
+Field
+
+```java
+private MessageSender sender;
+```
+
+Method
+
+```java
+send(String message)
+```
+
+Constraints
+
+* Use dependency injection.
+* Demonstrate polymorphism.
+
+---
+
+## Question 48 — Computer System
+
+Create:
+
+```java
+Cpu
+Computer
+```
+
+Computer fields
+
+```java
+private Cpu cpu;
+```
+
+Methods
+
+```java
+start()
+shutdown()
+```
+
+Constraints
+
+* Use composition.
+* A computer owns its CPU.
+
+---
+
+## Question 49 — File Exporter
+
+Create interface:
+
+```java
+Exporter
+```
+
+Method
+
+```java
+export(String data)
+```
+
+Implement:
+
+```java
+CsvExporter
+JsonExporter
+XmlExporter
+```
+
+Outputs
+
+```text
+CSV Export Complete
+JSON Export Complete
+XML Export Complete
+```
+
+Constraints
+
+* Use interfaces.
+* Demonstrate polymorphism.
+
+---
+
+## Question 50 — Online Store Discount Engine
+
+Create interface:
+
+```java
+DiscountRule
+```
+
+Method
+
+```java
+apply(double amount)
+```
+
+Implement:
+
+```java
+PercentageDiscount
+FixedAmountDiscount
+```
+
+Rules
+
+Example:
+
+```text
+Amount = 1000
+
+10% Discount -> 900
+
+Fixed Discount 100 -> 900
+```
+
+Constraints
+
+* Apply the Strategy Pattern.
+* Demonstrate polymorphism.
+
+---
+
+# Submission Instructions
+
+## Requirements
+
+Complete all 50 coding questions.
+
+Follow all constraints provided in each question.
+
+Use:
+
+* Encapsulation
+* Inheritance
+* Polymorphism
+* Abstraction
+* Interfaces
+* Composition
+* Aggregation
+* Association
+
+where required.
+
+---
+
+## Running Tests
+
+Run:
+
+```bash
+mvn test
+```
+
+All tests must pass.
+
+---
+
+## Academic Integrity
+
+This assessment is intended to evaluate your understanding of Object-Oriented Programming.
+
+You are encouraged to:
+
+* Plan before coding
+* Test your solutions
+* Refactor when necessary
+
+You may use:
+
+* Java Documentation
+* Class Notes
+* Previous Exercises
+
+You may not submit work copied from another student.
+
+---
+
+## Mark Allocation
+
+| Section                 | Marks |
+| ----------------------- | ----- |
+| Coding Questions (1–50) | 100   |
+| Theory Questions        | 50    |
+| Code Quality            | 20    |
+| Total                   | 170   |
+
+---
+
+# Good Luck
+
+Focus on writing clean, readable, object-oriented code.
+
+Remember:
+
+> Good OOP is not about writing more classes.
+>
+> Good OOP is about giving each class a single clear responsibility.
